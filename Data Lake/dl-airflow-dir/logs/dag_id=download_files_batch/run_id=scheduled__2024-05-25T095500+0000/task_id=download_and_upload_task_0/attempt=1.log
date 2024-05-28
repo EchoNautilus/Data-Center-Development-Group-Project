@@ -1,0 +1,20 @@
+[2024-05-25T10:00:04.269+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-25T10:00:04.301+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: download_files_batch.download_and_upload_task_0 scheduled__2024-05-25T09:55:00+00:00 [queued]>
+[2024-05-25T10:00:04.312+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: download_files_batch.download_and_upload_task_0 scheduled__2024-05-25T09:55:00+00:00 [queued]>
+[2024-05-25T10:00:04.312+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-05-25T10:00:04.349+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): download_and_upload_task_0> on 2024-05-25 09:55:00+00:00
+[2024-05-25T10:00:04.353+0000] {standard_task_runner.py:63} INFO - Started process 233 to run task
+[2024-05-25T10:00:04.356+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'download_files_batch', 'download_and_upload_task_0', 'scheduled__2024-05-25T09:55:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/download-files_batch.py', '--cfg-path', '/tmp/tmp6ff4uerg']
+[2024-05-25T10:00:04.357+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask download_and_upload_task_0
+[2024-05-25T10:00:04.430+0000] {task_command.py:426} INFO - Running <TaskInstance: download_files_batch.download_and_upload_task_0 scheduled__2024-05-25T09:55:00+00:00 [running]> on host 7f87f2070cf0
+[2024-05-25T10:00:04.566+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='download_files_batch' AIRFLOW_CTX_TASK_ID='download_and_upload_task_0' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T09:55:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T09:55:00+00:00'
+[2024-05-25T10:00:04.567+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-25T10:00:04.592+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/utils/context.py:320 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2024-05-25T10:01:47.036+0000] {logging_mixin.py:188} INFO - Error downloading file from https://covid.ourworldindata.org/data/owid-covid-data.csv: <urlopen error retrieval incomplete: got only 102316422 out of 102455448 bytes>
+[2024-05-25T10:01:49.112+0000] {logging_mixin.py:188} INFO - File our-world-in-data-covid19_20240525T095500.xlsx uploaded successfully to MinIO!
+[2024-05-25T10:01:49.113+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-25T10:01:49.113+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-25T10:01:49.124+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=download_files_batch, task_id=download_and_upload_task_0, run_id=scheduled__2024-05-25T09:55:00+00:00, execution_date=20240525T095500, start_date=20240525T100004, end_date=20240525T100149
+[2024-05-25T10:01:49.199+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-25T10:01:49.216+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-25T10:01:49.218+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

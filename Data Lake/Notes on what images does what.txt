@@ -1,0 +1,4 @@
+Gathering Data: Airflow
+Data Lake/Storage: MinIO
+Data Processing: Dremio
+Presentation: Metabase
